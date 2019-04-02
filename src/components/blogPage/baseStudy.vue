@@ -32,7 +32,7 @@
                     3，在Vue 中绑定一个方法 用v-bind 来绑定一个事件 v-bind:click="函数" ，简写的方式 @click，方法一般实例在methods里面。<br><br>
                     4，如何动态绑定一个class => :class="{active: boolean }",如何动态绑定一个:style = "",computed:{ } 计算属性中返回一个标准的样式对象即可<br><br>
                     5，条件渲染v-if / v-else-if / v-else 来判断是否渲染。例如：<br>
-                    type的值来显示标签里的内容  v-if="type == 1"/显示A  v-else-if="type == 2"/显示B   v-else/ 显示not A B <br><br>
+                    type的值来显示标签里的内容  v-if="type == 1"/显示A  v-else-if="type == 2"/显示B   v-else/ 显示not A B ，V-if v-show 区别 前者不加载DOM 有着加载但隐藏。<br><br>
                     6，在标签中渲染列表 v-for 指令： v-for="(item,key,index) in  userList" 分别把里面的内容用{ { item.name } }等模板语法渲染出来。注意在遍历一个对象的时候有三个参数
                     第一个是value,第二个是对象的key,第三个是下标。<br><br>
                     7，事件修饰符： 过去我们阻止事件冒泡 e.stopPropagation Vue 给我们提供了@click.stop 包括还有一下的阻止行为的方式：<br>
@@ -297,7 +297,7 @@ export default {
                 email: '12345@qq.com',
                 pwd: '123456',
                 age: 12,
-                likes: [],
+                likes: ['吃饭','撩妹'],
                 remark :'这是一些胡乱的东西',
                 sex: 1,
                 level: '中级'
