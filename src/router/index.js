@@ -10,6 +10,7 @@ import directiveStudy from '@/components/blogPage/directiveStudy'
 import netServerStudy from '@/components/blogPage/netServerStudy' 
 import routerStudy from '@/components/blogPage/routerStudy' 
 import storeStudy from '@/components/blogPage/storeStudy' 
+import animation from '@/components/blogPage/animation' 
 Vue.use(Router)
 
 export default new Router({
@@ -29,6 +30,7 @@ export default new Router({
         {path:'/netServer',name:'netServerStudy',component:netServerStudy},
         {path:'/router',name:'routerStudy',component:routerStudy},
         {path:'/store',name:'storeStudy',component:storeStudy},
+        {path:'/animation',name:'animation',component:animation}
       ]
     }
   ]
