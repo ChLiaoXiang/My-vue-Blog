@@ -99,6 +99,11 @@
                         })
                     </pre>
                 </div>
+                <div class="pageAnalysis">
+                    <a href="../../../static/imgs/vue-img/hookFun.png" target="_Blank">
+                        <img src="../../../static/imgs/vue-img/hookFun.png" alt="">
+                    </a>
+                </div>
             </div>
         </div>
     </div>
