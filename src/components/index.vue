@@ -2,7 +2,9 @@
     <div id="index">
         <nav-list></nav-list>
         <div class="container">
-            <router-view></router-view>
+            <transition enter-active-class="animated zoomIn" appear>
+                <router-view></router-view>
+            </transition>
         </div>
     </div>
 </template>
