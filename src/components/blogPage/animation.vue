@@ -141,7 +141,7 @@
                         
                         <!-- 如果直接使用transition 包裹多个元素会报错  Vue 提供了transition-group -->
                         <transition-group tag="ul"  class="list-group" name="slide">
-                            <li v-for="(item,index) in liList" :key="item"  
+                            <li v-for="(item,index) in liList" :key="item"  :data="`${item}_${index}`"
                             class="list-group-item"
                             @click="remove(index)">{{item}}</li>
                         </transition-group>
@@ -245,8 +245,15 @@ export default {
         opacity: 0;
         transform: translateY(20px);
     }
-    .slide-enter-active,.slide-leave-active{
+    .slide-move{
+        transition: transform 1s;
+    }
+    .slide-enter-active,{
         transition: all 1s ease;
+    }
+    .slide-leave-active{
+        transition: all 1s ease;
+        position: absolute;
     }
 </style>
 
