@@ -23,7 +23,21 @@ export default new Router({
       path:'/index',
       component: index,
       children: [
-        {path:'/',name:'oneSelf',component:oneSelf},
+        {
+          path:'/',
+          name:'oneSelf',
+          component:oneSelf,
+          beforeEnter: (to,from,next) => {  //简单的权限设置
+            // console.log(to,'to');
+            // console.log(from,'from');
+            if(from.path === '/'){
+              next();
+            }else{
+              alert('主页必须在登陆页面登陆！')
+              next('/');
+            }
+          }
+        },
         {path:'/base',name:'baseStudy',component:baseStudy},
         {path:'/compoent',name:'compoentStudy',component:compoentStudy},
         {path:'/directive',name:'directiveStudy',component:directiveStudy},

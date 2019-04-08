@@ -302,7 +302,7 @@ export default {
         return {
             title:'Vue组建的学习',
             msg:'我是初始值',
-            page:'sonCompoent'
+            page:'son-compoent'
         }
     },
     components:{    //注册子组件
