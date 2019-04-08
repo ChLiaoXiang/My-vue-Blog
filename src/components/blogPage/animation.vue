@@ -3,7 +3,7 @@
         <h4 class="title">{{title}}</h4>
         <hr>
         <div class="myself-show row"> 
-            <h3 class="text-center">Vue animation 动画学习</h3>
+            <h3 class="text-center">Vue 动画过渡</h3>
             <hr>
             <div calss="text-left">
                 <div class="pageAnalysis">
@@ -129,7 +129,7 @@ export default {
     name:'routerStudy',
     data(){
         return {
-            title:'Vue-animation 学习',
+            title:'Vue 动画过渡',
 
             demo1: true,   
             demo2: true,

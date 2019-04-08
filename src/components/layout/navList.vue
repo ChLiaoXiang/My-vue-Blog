@@ -7,7 +7,7 @@
                         LiaoXiang
                     </a>
                 </div>
-                <div class="navbar-collapse collapse">
+                <div class="navbar-collapse collapse" >
                     <ul class="nav navbar-nav">
                         <li :class="{active: haigLine == index}" v-for="(item,index) in navList" :key="index" @click="handerActive(item.rname,item.path,index,item.name)">
                             <a href="javascript:void(0)">{{item.name}}</a>

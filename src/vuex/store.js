@@ -11,6 +11,7 @@ const store = new Vuex.Store({
             {name:'Vue组件',path:'/compoent',rname:'compoentStudy'},
             {name:'Vue指令',path:'/directive',rname:'directiveStudy'},
             {name:'Vue仓库',path:'/store',rname:'storeStudy'},
+            {name:'Vue动画',path:'/animation',rname:'animation'},
             {name:'Web网络',path:'/netServer',rname:'netServerStudy'},
         ]
     },
