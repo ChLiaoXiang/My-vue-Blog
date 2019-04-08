@@ -121,6 +121,34 @@
                 </div>
             </div>
         </div>
+        <div class="myself-show row"> 
+            <h3 class="text-center"> Vue transition-group</h3>
+            <hr>
+            <div calss="text-left">
+                <div class="pageAnalysis">
+                    transition-group实现多组间
+                    <hr>
+                    <pre>
+                        
+                    </pre>
+                    <br><br>
+                    <h4>示例：</h4>
+                    <hr>
+                    <div>  
+                        <p class="lead">
+                            <button class="btn btn-success" @click="addItem"> addItem</button>    
+                        </p>
+                        
+                        <!-- 如果直接使用transition 包裹多个元素会报错  Vue 提供了transition-group -->
+                        <transition-group tag="ul"  class="list-group" name="slide">
+                            <li v-for="(item,index) in liList" :key="item"  
+                            class="list-group-item"
+                            @click="remove(index)">{{item}}</li>
+                        </transition-group>
+                    </div>
+                </div>
+            </div>
+        </div>
         <br><br><br>
     </div>
 </template>
@@ -134,6 +162,16 @@ export default {
             demo1: true,   
             demo2: true,
             demo3: true,
+            liList:[1,2,3,4,5]
+        }
+    },
+    methods:{
+        remove(index){
+            this.liList.splice(index,1);
+        },
+        addItem(){
+            let pos = Math.floor(Math.random() * this.liList.length);
+            this.liList.splice(pos,0,this.liList.length);
         }
     },
     created(){
@@ -200,6 +238,15 @@ export default {
     }
     .anit-leave-to{
         opacity: 0;
+    }
+
+    /* 案例4 */
+    .slide-enter,.slide-leave-to{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    .slide-enter-active,.slide-leave-active{
+        transition: all 1s ease;
     }
 </style>
 
