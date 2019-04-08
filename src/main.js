@@ -13,6 +13,7 @@ Vue.use(swiper, /* { default global options } */); //使用swiper
 Vue.config.productionTip = false
 //引入全局组建
 Vue.component('navList',navList);//创建一个全局指令
+//自定义指令
 Vue.directive('startColor', {
   //一共有五个钩子函数  常用绑定的就bind 
   bind(el, bind, vnode) { //只调用一次，指令第一次绑定到元素时调用。在这里可以进行一次性的初始化设置。
@@ -42,6 +43,12 @@ Vue.directive('startColor', {
   }
 });
 
+//全局路由守卫
+router.beforeEach((to,from,next) => {
+  console.log(to,'全局to 守卫');
+  console.log(from,'全局from 守卫');
+  next();
+})
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
