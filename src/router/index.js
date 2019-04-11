@@ -10,7 +10,8 @@ import directiveStudy from '@/components/blogPage/directiveStudy'
 import netServerStudy from '@/components/blogPage/netServerStudy' 
 import routerStudy from '@/components/blogPage/routerStudy' 
 import storeStudy from '@/components/blogPage/storeStudy' 
-import animation from '@/components/blogPage/animation' 
+import { resolve } from 'path';
+// import animation from '@/components/blogPage/animation' 
 Vue.use(Router)
 
 export default new Router({
@@ -33,19 +34,26 @@ export default new Router({
             if(from.path === '/'){
               next();
             }else{
-              alert('主页必须在登陆页面登陆！')
+              alert('我这里做了路由守卫，只能从login 页面登陆！否则将会被拦截。')
               next('/');
             }
           }
         },
-        {path:'/base',name:'baseStudy',component:baseStudy},
-        {path:'/compoent',name:'compoentStudy',component:compoentStudy},
-        {path:'/directive',name:'directiveStudy',component:directiveStudy},
-        {path:'/netServer',name:'netServerStudy',component:netServerStudy},
-        {path:'/router',name:'routerStudy',component:routerStudy},
-        {path:'/store',name:'storeStudy',component:storeStudy},
-        {path:'/animation',name:'animation',component:animation}
+        {path:'base',name:'baseStudy',component:baseStudy},
+        {path:'compoent',name:'compoentStudy',component:compoentStudy},
+        {path:'directive',name:'directiveStudy',component:directiveStudy},
+        {path:'netServer',name:'netServerStudy',component:netServerStudy},
+        {path:'router',name:'routerStudy',component:routerStudy},
+        {path:'store',name:'storeStudy',component:storeStudy},
+        {
+          path:'animation',
+          name:'animation',
+          component: resolve => { //webpack 路由懒加载
+            require(['../components/blogPage/animation.vue'],resolve);
+          }
+        }
       ]
-    }
-  ]
+    },
+  ],
+  mode: 'history'
 })

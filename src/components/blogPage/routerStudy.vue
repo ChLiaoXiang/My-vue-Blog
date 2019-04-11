@@ -160,11 +160,48 @@
                     </pre>
                 </div>
             </div>
+            <div calss="text-left">
+                <div class="pageAnalysis">
+                    路由守卫2: <br>
+                    <hr>
+                    <pre>
+                        //在每个组件中有两个路由钩子函数 用来处理进入这个路由之前干什么（beforeRouterEnter）（beforeRouterLeave）
+                        export default {
+                            beforeRouteEnter(to,from,next){
+                                next( vm => {
+                                    //vm 可以拿到该组件的实例
+                                    // console.log(vm); 
+                                    next(); //在这我们直接通过了
+                                });
+                            },
+                            beforeRouteLeave(to,from,next){
+
+                            }
+                        }
+                        <h4 style="color:red">路由守卫2 钩子函数卸载了页面中</h4>
+                    </pre>
+                </div>
+            </div>
         </div>
     </div>
 </template>
 <script>
 export default {
+    beforeRouteEnter(to,from,next){
+        alert('你确定要进入路由组件？  -- from beforeRouteEnter');
+        next( vm => {
+            //vm 可以拿到该组件的实例
+            // console.log(vm);
+            next(); //在这我们直接通过了
+        });
+    },
+    beforeRouteLeave(to,from,next){
+        alert('你确定要离开路由组件？  -- from beforeRouteLeave');
+        next( vm => {
+            //vm 可以拿到该组件的实例
+            next(); //在这我们直接通过了
+        });
+    },
     name:'routerStudy',
     data(){
         return {
@@ -172,7 +209,7 @@ export default {
         }
     },
     created(){
-        this.title = this.$route.params.title;
+        this.title ? this.$route.params.title : '';
     }
 }
 </script>

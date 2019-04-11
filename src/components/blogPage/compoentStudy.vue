@@ -68,19 +68,19 @@
                                 }
                             },
                             //声明周期函数
-                            beforCreate:function(){
+                            beforeCreate:function(){
                                 //组件创建前
                             },
                             created:function(){
                                 //组件创建完毕
                             },
-                            beforMount:function(){
+                            beforeMount:function(){
                                 //组件挂在前
                             },
                             mounted:function(){
                                 //组件挂在完成
                             },
-                            beforUpdate:function(){
+                            beforeUpdate:function(){
                                 //数据发生改变执行  --监听实例中所有数据
                             },
                             update:function(){
@@ -89,7 +89,7 @@
 
                             //执行销毁组件后会执行两个钩子函数 this.$destory()
 
-                            beforDestory:function(){
+                            beforeDestroy:function(){
                                 //销毁组件之前执行
                             }
                             destory:function(){
@@ -313,9 +313,31 @@ export default {
             this.msg = msg;
         }
     },
+    mounted(){
+        
+    },
+    beforeCreate(){
+        // console.log('A组件初始化之前 beforeCreate');
+    },
     created(){
-        this.title = this.$route.params.title;
+        // console.log('A组件初始化之后 created');
+        this.title ? this.$route.params.title : '';
+    },
+    beforeMount(){
+        // console.log('A组件DOM加载之前 beforeMount');
+    },
+    mounted(){
+        // console.log('A组件DOM加载之后 mounted');
+    },
+    
+    beforeDestroy(){ //销毁
+        this.bus.$emit('changeComponet','hi , I from A-component');
+        // console.log('A组件销毁之前 beforeDestroy');
+    },
+    destroyed(){
+        // console.log('A组件销毁之后 destroyed');
     }
+
 }
 </script>
 <style>

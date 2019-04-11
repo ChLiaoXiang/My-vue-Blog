@@ -129,7 +129,14 @@
                     transition-group实现多组间
                     <hr>
                     <pre>
-                        
+                        &lt;transition-group tag="ul" name="animationName" &gt;
+                            &lt;li&gt; 1 &lt;/li&gt;
+                            &lt;li&gt; 2 &lt;/li&gt;
+                            &lt;li&gt; 3 &lt;/li&gt;
+                            &lt;li&gt; 4 &lt;/li&gt;
+                        &lt;transition-group&gt;
+
+                        //tag = "ul" 会直接把transition-group 转成ul 标签  name为动画状态  也可直接用动画库
                     </pre>
                     <br><br>
                     <h4>示例：</h4>

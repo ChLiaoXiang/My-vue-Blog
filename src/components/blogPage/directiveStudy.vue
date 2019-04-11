@@ -158,7 +158,7 @@ export default {
         }
     },
     created(){
-        this.title = this.$route.params.title;
+        this.title ? this.$route.params.title : '';
     }
 }
 </script>

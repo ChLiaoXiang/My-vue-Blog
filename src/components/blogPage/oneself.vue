@@ -42,7 +42,11 @@
                     <hr>
                     4，引入了swiper 个人展示中的轮播图。（npm install -S vue-awesome-swiper ， Vue.use(spwier) , 并引入CSS 文件）。
                     <hr>
-                    5，在初步Vue中打包时，打包后 index.html 空白！ 初步解决方案是 config/index.js 中 build.assetsPublicPath : './' 值改成  './'最初是 '/'。
+                    5，在初步Vue中打包时，打包后 index.html 空白！解决方案是 config/index.js 中 build.assetsPublicPath : './' 值改成  './'最初是 '/'。
+                    <hr>
+                    6，在打包完成图片不能显示在页面上，修改build/utils.js 中的 ExtractTextPlugin.extract 下属性 publicPath:'../../' 。
+                    <hr>
+                    7，图片路由的切换利用的是 Vue 动画过渡功 实现方式请 <router-link to="/animation">点击我查看</router-link> 。
                 </div>
             </div>
         </div>

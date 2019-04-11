@@ -45,10 +45,15 @@ Vue.directive('startColor', {
 
 //全局路由守卫
 router.beforeEach((to,from,next) => {
-  console.log(to,'全局to 守卫');
-  console.log(from,'全局from 守卫');
+  // console.log(to,'全局to 守卫');
+  // console.log(from,'全局from 守卫');
   next();
-})
+});
+
+//创建一个Bus 总线进行组件通信
+let bus = new Vue();
+Vue.prototype.bus = bus;
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

@@ -356,6 +356,7 @@ export default {
     },
     created(){
         // console.log(this.$route.params.title);
+        this.title ? this.$route.params.title : '';
     },
     mounted(){
         
