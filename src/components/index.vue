@@ -1,9 +1,9 @@
 <template>
     <div id="index">
-        <nav-list></nav-list>
+        <nav-list ref="navList"></nav-list>
         <div class="container">
             <transition enter-active-class="animated zoomIn" appear>
-                <router-view></router-view>
+                <router-view ref="myname"></router-view>
             </transition>
         </div>
     </div>
@@ -22,6 +22,7 @@ export default {
     mounted(){
         //  nav calss 效果
         // sessionStorage.setItem('id',-1);
+        console.log(this.$refs.navList);
     }
 }
 </script>
