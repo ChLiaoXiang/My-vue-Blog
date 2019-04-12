@@ -24,7 +24,11 @@ export default {
     data(){
         return {
             haigLine: -1,
-            navList: this.$store.state.navList,  //练习将仓库放入其中
+        }
+    },
+    computed:{
+        navList(){
+            return this.$store.state.navList;
         }
     },
     methods:{
