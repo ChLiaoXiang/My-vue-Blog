@@ -47,6 +47,8 @@
                     6，在打包完成图片不能显示在页面上，修改build/utils.js 中的 ExtractTextPlugin.extract 下属性 publicPath:'../../' 。
                     <hr>
                     7，图片路由的切换利用的是 Vue 动画过渡功 实现方式请 <router-link to="/animation">点击我查看</router-link> 。
+                    <hr>
+                    8，改笔记性质的博客项目基本完工  经常用到的一个指令 ref   $refs没有写入 - 页面比较凌乱建议有些东西查看手册。  此博客非长久维护博客！
                 </div>
             </div>
         </div>
