@@ -48,8 +48,8 @@ export default new Router({
         {
           path:'animation',
           name:'animation',
-          component: resolve => { //webpack 路由懒加载
-            require(['../components/blogPage/animation.vue'],resolve);
+          component: (resolve) => {   //webpack 路由懒加载
+            require(['@/components/blogPage/animation.vue'],resolve);
           }
         }
       ]

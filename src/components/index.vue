@@ -27,7 +27,9 @@ export default {
 }
 </script>
 <style>
-
+    .router-link-active{
+        color: red;
+    }
 </style>
 
 

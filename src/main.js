@@ -10,6 +10,8 @@ import swiper from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
 Vue.use(swiper, /* { default global options } */); //使用swiper
 
+console.log(swiper,'组件')
+
 Vue.config.productionTip = false
 //引入全局组建
 Vue.component('navList',navList);//创建一个全局指令
